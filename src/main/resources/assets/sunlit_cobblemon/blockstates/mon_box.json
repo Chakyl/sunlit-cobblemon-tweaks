@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "facing=down,open=false": {
+      "model": "sunlit_cobblemon:block/mon_box_closed",
+      "x": 180
+    },
+    "facing=east,open=false": {
+      "model": "sunlit_cobblemon:block/mon_box_closed",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=false": {
+      "model": "sunlit_cobblemon:block/mon_box_closed",
+      "x": 90
+    },
+    "facing=south,open=false": {
+      "model": "sunlit_cobblemon:block/mon_box_closed",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,open=false": {
+      "model": "sunlit_cobblemon:block/mon_box_closed"
+    },
+    "facing=west,open=false": {
+      "model": "sunlit_cobblemon:block/mon_box_closed",
+      "x": 90,
+      "y": 270
+    },
+    "facing=down,open=true": {
+      "model": "sunlit_cobblemon:block/mon_box_open",
+      "x": 180
+    },
+    "facing=east,open=true": {
+      "model": "sunlit_cobblemon:block/mon_box_open",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north,open=true": {
+      "model": "sunlit_cobblemon:block/mon_box_open",
+      "x": 90
+    },
+    "facing=south,open=true": {
+      "model": "sunlit_cobblemon:block/mon_box_open",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up,open=true": {
+      "model": "sunlit_cobblemon:block/mon_box_open"
+    },
+    "facing=west,open=true": {
+      "model": "sunlit_cobblemon:block/mon_box_open",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

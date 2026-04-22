@@ -1,0 +1,9 @@
+{
+
+  "itemGroup.sunlit_cobblemon": "Sunlit Cobblemon",
+  "gui.sunlit_cobblemon.unknown_pokemon": "???",
+  "message.sunlit_cobblemon.in_battle": "You can't access this while battling!",
+
+  "item.sunlit_cobblemon.pocket_pc": "Pocket PC",
+  "block.sunlit_cobblemon.mon_box": "Mon Box"
+}
