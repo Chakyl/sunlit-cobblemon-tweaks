@@ -5,10 +5,7 @@ import com.cobblemon.mod.common.api.spawning.context.SpawningContext;
 import com.cobblemon.mod.common.api.spawning.detail.PokemonSpawnDetail;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnAction;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
-import com.cobblemon.mod.common.command.SpawnPokemon;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import com.cobblemon.mod.common.pokemon.Pokemon;
-import io.github.chakyl.sunlitcobblemon.SunlitCobblemon;
 import io.github.chakyl.sunlitcobblemon.block.MonBoxBlock;
 import io.github.chakyl.sunlitcobblemon.registry.SunlitCobblemonRegistry;
 import kotlin.Pair;
@@ -16,20 +13,20 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 
 import static io.github.chakyl.sunlitcobblemon.util.GeneralUtils.getSelectedSpawn;
 
 public class MonBoxBlockEntity extends BlockEntity {
     private int ACTIVATION_RANGE = 14;
-    private int MAX_NEARBY_ENTITIES = 10;
+    private int MAX_NEARBY_ENTITIES = 16;
     protected String pokemonType = "";
     private int pokemonCount = 5;
     private int cooldown = 0;
@@ -45,7 +42,7 @@ public class MonBoxBlockEntity extends BlockEntity {
         if (level.getGameTime() % 4 == 0 && dispensedPokemons == 0 && !level.getBlockState(facingPos).isSolid() && isNearPlayer(level, pos)) {
             int day = (int) (Math.floor((double) level.dayTime() / 24000) + 1);
             if (day != cooldown) {
-                int nearbyPokemons = level.getEntitiesOfClass(PokemonEntity.class, (new AABB(pos.getX(), pos.getY(), pos.getZ(), (pos.getX() + 1), (pos.getY() + 1), (pos.getZ() + 1))).inflate(3)).size();
+                int nearbyPokemons = level.getEntitiesOfClass(PokemonEntity.class, (new AABB(pos.getX(), pos.getY(), pos.getZ(), (pos.getX() + 1), (pos.getY() + 1), (pos.getZ() + 1))).inflate(1)).size();
                 if (nearbyPokemons < this.MAX_NEARBY_ENTITIES) {
                     BlockState newState = state.setValue(MonBoxBlock.OPEN, true);
                     this.cooldown = day;
@@ -59,8 +56,10 @@ public class MonBoxBlockEntity extends BlockEntity {
             if (spawnPossibilities != null) {
                 SpawnAction<?> a = spawnPossibilities.getSecond().doSpawn(spawnPossibilities.getFirst());
                 PokemonSpawnDetail detail = (PokemonSpawnDetail) spawnPossibilities.getSecond();
-                PokemonProperties pokemonProperties =  detail.getPokemon();
+                PokemonProperties pokemonProperties = detail.getPokemon();
                 PokemonEntity entity = pokemonProperties.createEntity(level);
+                int randomNum = level.getRandom().nextIntBetweenInclusive(detail.getDerivedLevelRange().getStart(), detail.getDerivedLevelRange().getEndInclusive());
+                entity.getPokemon().setLevel(randomNum);
                 if (entity != null) {
                     Direction direction = state.getValue(MonBoxBlock.FACING);
                     double d0 = facingPos.getX() + 0.5;
@@ -73,7 +72,7 @@ public class MonBoxBlockEntity extends BlockEntity {
                     entity.push(d3, d4, d5);
                     entity.moveTo(d0, d1, d2, level.random.nextFloat() * 360.0F, 0.0F);
                     if (level.addFreshEntity(entity)) {
-                        entity.playSound(SoundEvents.CHICKEN_EGG, 1.0F, 1.2F);
+                        entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 80, 1, true, false));
                         this.dispensedPokemons++;
                     }
 
