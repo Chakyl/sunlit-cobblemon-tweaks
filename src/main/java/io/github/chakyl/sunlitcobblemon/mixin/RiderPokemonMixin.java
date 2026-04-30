@@ -23,7 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Mixin(CobblemonRider.FolderManager.class)
-public class MixinRiderPokemon {
+public class RiderPokemonMixin {
 
     /**
      * @author Chakyl

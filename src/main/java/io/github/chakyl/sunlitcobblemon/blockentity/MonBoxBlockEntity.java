@@ -25,10 +25,10 @@ import net.minecraft.world.phys.AABB;
 import static io.github.chakyl.sunlitcobblemon.util.GeneralUtils.getSelectedSpawn;
 
 public class MonBoxBlockEntity extends BlockEntity {
-    private int ACTIVATION_RANGE = 14;
+    private int ACTIVATION_RANGE = 7;
     private int MAX_NEARBY_ENTITIES = 16;
     protected String pokemonType = "";
-    private int pokemonCount = 5;
+    private int pokemonCount = 3;
     private int cooldown = 0;
     private int dispensedPokemons = 0;
 
@@ -39,7 +39,7 @@ public class MonBoxBlockEntity extends BlockEntity {
     public void tick(Level level, BlockPos pos, BlockState state) {
         if (level.isClientSide()) return;
         BlockPos facingPos = pos.relative(state.getValue(DispenserBlock.FACING));
-        if (level.getGameTime() % 4 == 0 && dispensedPokemons == 0 && !level.getBlockState(facingPos).isSolid() && isNearPlayer(level, pos)) {
+        if (level.getGameTime() % 20 == 0 && dispensedPokemons == 0 && !level.getBlockState(facingPos).isSolid() && isNearPlayer(level, pos)) {
             int day = (int) (Math.floor((double) level.dayTime() / 24000) + 1);
             if (day != cooldown) {
                 int nearbyPokemons = level.getEntitiesOfClass(PokemonEntity.class, (new AABB(pos.getX(), pos.getY(), pos.getZ(), (pos.getX() + 1), (pos.getY() + 1), (pos.getZ() + 1))).inflate(1)).size();
@@ -51,7 +51,7 @@ public class MonBoxBlockEntity extends BlockEntity {
                 }
             }
         }
-        if (level.getGameTime() % 4 == 0 && state.getValue(MonBoxBlock.OPEN)) {
+        if (level.getGameTime() % 20 == 0 && state.getValue(MonBoxBlock.OPEN)) {
             Pair<SpawningContext, SpawnDetail> spawnPossibilities = getSelectedSpawn((ServerLevel) level, pos, (double) this.ACTIVATION_RANGE);
             if (spawnPossibilities != null) {
                 SpawnAction<?> a = spawnPossibilities.getSecond().doSpawn(spawnPossibilities.getFirst());
