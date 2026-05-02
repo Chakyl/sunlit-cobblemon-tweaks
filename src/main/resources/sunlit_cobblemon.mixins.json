@@ -10,7 +10,8 @@
     "RevivalHerbBlockMixin",
     "RiderPokemonMixin",
     "RideFormIgnoringMixin",
-    "BerryBlockMixin"
+    "BerryBlockMixin",
+    "PokemonConfigDataMixin"
   ],
   "client": [
     "CaughtPokemonMixin"
