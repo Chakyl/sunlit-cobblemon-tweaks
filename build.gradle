@@ -133,6 +133,18 @@ repositories {
 
     maven { url = 'https://maven.parchmentmc.org' }
     mavenCentral()
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        forRepositories(fg.repository) // Only add this if you're using ForgeGradle, otherwise remove this line
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
@@ -162,6 +174,11 @@ dependencies {
     implementation fg.deobf("curse.maven:cobbledex-1037354:5518541")
     implementation fg.deobf("curse.maven:kotlin-for-forge-351264:5402061")
     implementation fg.deobf("curse.maven:cobblemonrider-990998:5445719")
+    implementation fg.deobf("curse.maven:kubejs-238086:8020595")
+    implementation fg.deobf("curse.maven:rhino-416294:6186971")
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+
+    implementation fg.deobf("maven.modrinth:cobbreeding:L7IKCpcg")
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html

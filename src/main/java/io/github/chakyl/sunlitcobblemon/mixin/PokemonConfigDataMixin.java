@@ -15,9 +15,6 @@ public abstract class PokemonConfigDataMixin implements IPokemonConfig {
 
     @Shadow private int stamina;
     @Shadow private float speedModifier;
-    @Shadow private ArrayList<MountType> mountType;
-    @Shadow private ArrayList<Float> ridingOffSet;
-    @Shadow private ArrayList<ArrayList<Float>> passengersOffSet;
 
     @Override
     public void setExtraStats(int stamina, float speedModifier) {

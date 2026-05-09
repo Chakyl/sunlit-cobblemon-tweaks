@@ -3,15 +3,12 @@ package io.github.chakyl.sunlitcobblemon.events;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor;
 import com.cobblemon.mod.common.api.events.CobblemonEvents;
-import com.cobblemon.mod.common.api.events.battles.BattleStartedPostEvent;
 import com.cobblemon.mod.common.api.events.battles.BattleVictoryEvent;
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent;
-import com.cobblemon.mod.common.api.pokemon.stats.Stats;
-import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
-import kotlin.Unit;
 import com.rafacasari.mod.cobbledex.Cobbledex;
 import com.rafacasari.mod.cobbledex.api.classes.DiscoveryRegister;
+import kotlin.Unit;
 import net.minecraft.server.level.ServerPlayer;
 
 import java.util.List;
@@ -21,7 +18,6 @@ public class SunlitCobblemonEvents {
     public void eventInit() {
         com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY.subscribe(Priority.LOWEST, this::pokemonBattleVictory);
         CobblemonEvents.LOOT_DROPPED.subscribe(Priority.LOWEST, this::lootDropped);
-
     }
 
     private Unit pokemonBattleVictory(BattleVictoryEvent battleVictoryEvent) {
