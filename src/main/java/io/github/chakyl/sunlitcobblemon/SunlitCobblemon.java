@@ -1,6 +1,7 @@
 package io.github.chakyl.sunlitcobblemon;
 
 import com.mojang.logging.LogUtils;
+import io.github.chakyl.sunlitcobblemon.events.ForgeEvents;
 import io.github.chakyl.sunlitcobblemon.events.SunlitCobblemonEvents;
 import io.github.chakyl.sunlitcobblemon.registry.SunlitCobblemonRegistry;
 import net.minecraft.resources.ResourceLocation;
@@ -30,5 +31,7 @@ public class SunlitCobblemon {
         SunlitCobblemonRegistry.register();
         new SunlitCobblemonEvents().eventInit();
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(ForgeEvents.class);
+
     }
 }

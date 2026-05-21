@@ -10,11 +10,16 @@ import com.cobblemon.mod.common.api.spawning.context.SpawningContext;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.spawning.spawner.PlayerSpawner;
 import com.cobblemon.mod.common.api.spawning.spawner.SpawningArea;
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
+import com.cobblemon.mod.common.pokemon.Pokemon;
+import com.rafacasari.mod.cobbledex.api.CobbledexDiscovery;
+import com.rafacasari.mod.cobbledex.api.classes.DiscoveryRegister;
 import kotlin.Pair;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
@@ -84,5 +89,9 @@ public class GeneralUtils {
 
     private static ServerPlayer getNearPlayer(Level pLevel, BlockPos pPos, double range) {
         return (ServerPlayer) pLevel.getNearestPlayer((double) pPos.getX() + 0.5D, (double) pPos.getY() + 0.5D, (double) pPos.getZ() + 0.5D, range, true);
+    }
+
+    public static int getDexCount(ServerPlayer player) {
+        return CobbledexDiscovery.Companion.getPlayerData(player).getTotalCaught();
     }
 }
