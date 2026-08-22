@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "sunlit_cobblemon:block/time_frame_top",
+    "side": "sunlit_cobblemon:block/time_frame_side"
+  }
+}

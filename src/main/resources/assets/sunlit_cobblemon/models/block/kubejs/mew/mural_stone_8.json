@@ -1,0 +1,12 @@
+{
+	"parent": "minecraft:block/cube",
+	"textures": {
+		"particle": "minecraft:block/basalt_side",
+		"down": "minecraft:block/basalt_top",
+		"up": "minecraft:block/basalt_top",
+		"north": "sunlit_cobblemon:block/mew/mew_statue8",
+		"south": "minecraft:block/basalt_side",
+		"west": "minecraft:block/basalt_side",
+		"east": "minecraft:block/basalt_side"
+	}
+}
