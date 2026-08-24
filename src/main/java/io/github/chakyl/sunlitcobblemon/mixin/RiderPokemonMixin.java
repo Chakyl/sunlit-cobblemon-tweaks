@@ -60,12 +60,12 @@ public class RiderPokemonMixin {
         pokemonJsonObject.add("Dragonite", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 0.8F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Fearow", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Garchomp", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 0.7F, 0.0F))), 1000, 1.45F));
-        pokemonJsonObject.add("Dodrio", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 1.3F, 0.0F))), 0, 1.0F));
+        pokemonJsonObject.add("Dodrio", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 1.3F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Arcanine", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Steelix", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 6.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Stantler", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Avalugg", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.SWIM)), new ArrayList<>(List.of(0.0F, 3.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("Magnezone", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
+        pokemonJsonObject.add("Magnezone", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Stoutland", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Mightyena", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Wailmer", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.SWIM)), new ArrayList<>(List.of(0.0F, 2.0F, 0.0F))), 0, 1.0F));
@@ -91,6 +91,7 @@ public class RiderPokemonMixin {
         pokemonJsonObject.add("Hydreigon", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Noivern", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Scyther", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.FLY)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
+        pokemonJsonObject.add("Scizor", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.FLY)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Sharpedo", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.SWIM)), new ArrayList<>(List.of(0.0F, 1.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Bouffalant", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 2.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Exeggutor", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 3.0F, 0.0F))), 0, 1.0F));
@@ -303,21 +304,10 @@ public class RiderPokemonMixin {
         pokemonJsonObject.add("Quaquaval", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.SWIM)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Lokix", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
         pokemonJsonObject.add("Klawf", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("greattusk", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("slitherwing", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.FLY)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("irontreads", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("ironmoth", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("ironjugulis", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("ironthorns", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("Baxcalibur", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("roaringmoon", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.FLY)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("walkingwake", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.SWIM)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("ironleaves", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("Fezandipiti", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("gougingfire", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("ragingbolt", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("ironboulder", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
-        pokemonJsonObject.add("ironcrown", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
+        pokemonJsonObject.add("Farigiraf", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
+        pokemonJsonObject.add("Frosmoth", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.FLY)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
+        pokemonJsonObject.add("Kleavor", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
+        pokemonJsonObject.add("Hawlucha", IPokemonConfig.apply(new PokemonJsonObject.PokemonConfigData(new ArrayList<>(List.of(MountType.WALK, MountType.FLY)), new ArrayList<>(List.of(0.0F, 0.0F, 0.0F))), 0, 1.0F));
 
         if (pokemonRideConfig.exists()) {
             boolean deleted = pokemonRideConfig.delete();
